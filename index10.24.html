@@ -41,26 +41,83 @@
       .mgl {
         margin-left: 8px;
       }
+      .shadow {
+        box-shadow: rgba(190, 235, 30, 0.747);
+      }
+      .daohang {
+        padding: 10px 20px;
+        border-bottom: 1px solid rgb(190, 190, 190);
+        font-size: 14px;
+        color: #666;
+      }
+      /* 当屏幕宽度小于600px时要改变的css*/
+      @media (max-width: 600px) {
+        .cebian {
+          display: none;
+        }
+        .neirong {
+          flex-direction: column;
+        }
+        .shuju {
+          flex-direction: column;
+        }
+        .youqu {
+          margin-left: 8px;
+        }
+        .shujukuai {
+          margin: 0 0 8px;
+          flex: auto;
+        }
+      }
     </style>
   </head>
   <body class="flex">
     <!-- 侧边栏 -->
-    <div style="width: 200px" class="baise"></div>
+    <div style="width: 200px; z-index: 2" class="cebian baise">
+      <!-- 头像 -->
+      <div
+        style="
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid #999;
+        "
+        class="flex"
+      >
+        <img
+          src="https://tse4-mm.cn.bing.net/th/id/OIP-C.vS3mNNO7rWdIjDlwVgzwzAAAAA?pid=ImgDet&rs=1"
+          sheight=" 40px;"
+          width=" 40px"
+        />
+        <div style="margin-left: 8px">Lumerii</div>
+      </div>
+      <!-- 导航-->
+      <div class="flex1">
+        <div class="daohang">导航</div>
+        <div class="daohang">导航</div>
+        <div class="daohang">导航</div>
+        <div class="daohang">导航</div>
+        <div class="daohang">导航</div>
+      </div>
+    </div>
     <!-- 主区域 -->
     <div class="flex1 flex column">
       <!--头部-->
-      <div style="height: 60px" class="baise mgl8"></div>
+      <div style="height: 60px; z-index: 1" class="baise mgl8 shadow"></div>
       <!--内容-->
-      <div class="flex1 flex">
+      <div style="overflow: auto" class="neirong flex1 flex">
         <!--左区-->
         <div style="flex: 3" class="flex column mg8">
           <!-- 数据区 -->
-          <div class="flex">
+          <div class="shuju flex">
             <!-- 数据块 -->
-            <div style="height: 100px" class="baise flex1 mgr8"></div>
-            <div style="height: 100px" class="baise flex1 mgr8"></div>
-            <div style="height: 100px" class="baise flex1 mgr8"></div>
-            <div style="height: 100px" class="baise flex1 mgr8"></div>
+            <div
+              style="height: 100px"
+              class="shujukuai baise flex1 mgr8 shadow"
+            ></div>
+            <div style="height: 100px" class="shujukuai baise flex1 mgr8"></div>
+            <div style="height: 100px" class="shujukuai baise flex1 mgr8"></div>
+            <div style="height: 100px" class="shujukuai baise flex1 mgr8"></div>
           </div>
           <!-- 列表群 -->
           <div class="flex column">
@@ -68,10 +125,14 @@
             <div style="height: 160px" class="baise mgt8 mgr8"></div>
             <div style="height: 160px" class="baise mgt8 mgr8"></div>
             <div style="height: 160px" class="baise mgt8 mgr8"></div>
+            <div style="height: 160px" class="baise mgt8 mgr8"></div>
+            <div style="height: 160px" class="baise mgt8 mgr8"></div>
+            <div style="height: 160px" class="baise mgt8 mgr8"></div>
+            <div style="height: 160px" class="baise mgt8 mgr8"></div>
           </div>
         </div>
         <!-- 右区 -->
-        <div style="flex: 1" class="flex column">
+        <div style="flex: 1" class="youqu flex column">
           <!--提示区-->
           <div style="height: 150px" class="baise mgt8"></div>
           <!--消息区-->
